@@ -14,7 +14,7 @@ export default class NotesView {
               <div class="notes__list"></div>
           </div>
           <div class="notes__preview">
-              <input class="notes__title" type="text" placeholder="新笔记...">
+              <input class="notes__title" type="text" placeholder="新笔记..." />
               <textarea class="notes__body">编辑笔记...</textarea>
           </div>
       `;
