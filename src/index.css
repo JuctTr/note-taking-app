@@ -59,3 +59,9 @@
   margin-top: 2em;
   resize: none;
 }
+
+.excel_button {
+  display: flex;
+  flex-direction: row;
+  padding: 30px 0;
+}

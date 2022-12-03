@@ -3,6 +3,31 @@ import NoteItem from "./components/NoteItem";
 import EditArea from "./components/EditArea";
 import { getAllNotes, INoteItem, saveNote, deleteNode } from "./model";
 import useOnLoad from "./common/hook/useOnLoad";
+import ExportButton from "./components/ExportButton";
+import ImportButton from "./components/ImportButton";
+
+const tableColumns = [
+  {
+    header: "笔记ID",
+    key: "id",
+    width: 40,
+  },
+  {
+    header: "笔记标题",
+    key: "title",
+    width: 40,
+  },
+  {
+    header: "笔记内容",
+    key: "body",
+    width: 40,
+  },
+  {
+    header: "修改时间",
+    key: "updated",
+    width: 40,
+  },
+];
 
 function App() {
   console.log(
@@ -61,6 +86,16 @@ function App() {
           保存
         </button>
       </div>
+      <div className="excel_button">
+        <ImportButton onUpdateNote={onUpdateNote} />
+        <ExportButton
+          tableColumns={tableColumns}
+          tableRows={noteList}
+          excelName="我的笔记"
+          defaultText="导出文件"
+        />
+      </div>
+
       <div className="notes__list">
         {noteList.map((item) => (
           <NoteItem
